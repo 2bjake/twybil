@@ -1,18 +1,20 @@
 {
-  "version": "0.0.0",
-  "private": true,
   "name": "twybil",
+  "version": "0.0.0",
   "description": "twybil",
-  "repository": "https://github.com/2bjake/twybil",
-  "license": "MIT",
-  "devDependencies": {
-    "http-server": "^0.6.1",
-    "bower": "^1.3.1"
+  "dependencies": {
+    "express": "^4.9.7"
   },
-  "scripts": {
-    "postinstall": "bower install",
-
-    "prestart": "npm install",
-    "start": "http-server -a 0.0.0.0 -p 8001"
-  }
+  "devDependencies": {},
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2bjake/twybil.git"
+  },
+  "author": "Jake",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2bjake/twybil/issues"
+  },
+  "homepage": "https://github.com/2bjake/twybil"
 }
