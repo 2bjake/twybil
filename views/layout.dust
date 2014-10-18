@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{title}</title>
+    <title>{?title}{title} | {/title}Twybil</title>
     <link rel='stylesheet' href='/bower_components/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/style/main.css' />
   </head>
   <body>
+    <ul class="nav nav-pills">
+    {#menuLinks}
+    {! figure out how to mark active tab !}
+    <li><a href="{url}">{name}</a></li>
+    {/menuLinks}
+    </ul>
     {+content}
     This is the base content.
     {/content}
