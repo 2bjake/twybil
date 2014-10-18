@@ -1,0 +1,6 @@
+{>layout title="Projects"/}
+{<content}
+<h1>Projects</h1>
+<p>
+</p>
+{/content}

@@ -1,6 +1,0 @@
-{>layout title="Products"/}
-{<content}
-<h1>Products</h1>
-<p>
-</p>
-{/content}

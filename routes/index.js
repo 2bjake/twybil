@@ -4,7 +4,7 @@ var router = express.Router();
 //TODO: where should this go?
 var menuLinks = [
   {name:"Home", url:"/"},
-  {name:"Products", url:"/products"},
+  {name:"Projects", url:"/projects"},
   {name:"Contact", url:"/contact"},
   {name:"About", url:"/about"}
 ];
@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
   res.render('index', {menuLinks: menuLinks});
 });
 
-router.get('/products', function(req, res) {
-  res.render('products', {menuLinks: menuLinks});
+router.get('/projects', function(req, res) {
+  res.render('projects', {menuLinks: menuLinks});
 });
 
 router.get('/contact', function(req, res) {
