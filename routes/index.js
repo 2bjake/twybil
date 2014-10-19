@@ -2,27 +2,31 @@ var express = require('express');
 var router = express.Router();
 
 //TODO: where should this go?
-var menuLinks = [
-  {name:"Home", url:"/"},
-  {name:"Projects", url:"/projects"},
-  {name:"Contact", url:"/contact"},
-  {name:"About", url:"/about"}
+// defines the order, labels, and urls for the header nav
+var navInfo = [
+  {name: 'Home', url: '/'},
+  {name: 'Projects', url: '/projects'},
+  {name: 'Contact', url: '/contact'},
+  {name: 'About', url: '/about'}
 ];
 
-router.get('/', function(req, res) {
-  res.render('index', {menuLinks: menuLinks});
-});
+function renderHelper(url, template) {
+  var nav = [];
+  for(var i = 0; i < navInfo.length; i++) {
+    nav.push({info: navInfo[i], active: url === navInfo[i].url});
+  }
 
-router.get('/projects', function(req, res) {
-  res.render('projects', {menuLinks: menuLinks});
-});
+  return function(req, res) {
+    res.render(template, {nav: nav});
+  };
+}
 
-router.get('/contact', function(req, res) {
-  res.render('contact', {menuLinks: menuLinks});
-});
+router.get('/', renderHelper('/', 'index'));
 
-router.get('/about', function(req, res) {
-  res.render('about', {menuLinks: menuLinks});
-});
+router.get('/projects', renderHelper('/projects', 'projects'));
+
+router.get('/contact', renderHelper('/contact', 'contact'));
+
+router.get('/about', renderHelper('/about', 'about'));
 
 module.exports = router;
